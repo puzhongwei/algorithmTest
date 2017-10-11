@@ -12,35 +12,10 @@ void cal()
     sum[i]=sum[i-1]*i;
 }    //计算n！
 
-void qsort(int a[], int low, int high)
-{
-	int i = low, j = high;
-	int tmp = a[low];
-	if(i<j)
-	{
-		while(i<j)
-		{
-			while(i<j&&a[j]>=tmp)j--;
-			if(i<j)
-			{
-				a[i++]=a[j--];
-			}
-
-			while(i<j&&a[i]<tmp)i++;
-			if(i<j)
-			{
-				a[j--]=a[i++];
-			}
-		}
-		a[i]=tmp;
-		qsort(a,low,i-1);
-		qsort(a,i+1,j);
-	}
-}
 
 int main()
 {
-    /*cal();
+    cal();
     int i,j,k;
     double c1[55],c2[55];
     int n,m,num[30];
@@ -70,13 +45,6 @@ int main()
             }
         }
         printf("%.0f\n",c1[m]*sum[m]);  //注意指数型母函数的形式，最后得出答案时要乘上m!
-    }*/
-	int a[]={1,-3,5,8,19};
-	qsort(a,0,4);
-	for(int i =0 ; i < 5; ++i)
-	{
-		cout<<a[i]<<"  ";
-	}
-	cout<<endl;
+    }
     return 0;
 }
